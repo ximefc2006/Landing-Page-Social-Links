@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Plaza Guzman - Tu destino de comercio electrónico premium. Descubre los mejores productos con una experiencia de usuario inigualable.">
+    <title>Plaza Guzman | E-Commerce Premium</title>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome para Iconos de Redes Sociales -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Estilos -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar" id="mainNav">
+        <div class="logo">
+            <img src="logo.png" alt="Plaza Guzman Logo" class="navbar-logo">
+        </div>
+        <div class="nav-links">
+            <a href="#inicio">Inicio</a>
+            <a href="#comunidad">Comunidad</a>
+            <a href="#contacto" class="btn-primary">Contacto</a>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="hero" id="inicio">
+        <div class="hero-content">
+            <h1 class="fade-in-up">Encuentra Todo para tu <span>Hogar</span></h1>
+            <p class="fade-in-up delay-1">Desde artículos esenciales, decoración de temporada, hasta increíbles carpas. Descubre la mejor variedad y calidad al mejor precio.</p>
+            <div class="cta-group fade-in-up delay-2">
+                <a href="#comunidad" class="btn-primary pulse">Explorar Ahora</a>
+                <a href="#comunidad" class="btn-secondary">Conecta con Nosotros</a>
+            </div>
+        </div>
+        <div class="hero-image-container fade-in-up delay-3">
+            <div class="glass-card main-showcase">
+                <img src="hero.png" alt="Artículos para el hogar, Navidad y Camping" class="floating-product">
+            </div>
+        </div>
+    </header>
+
+    <!-- Social & QR Section -->
+    <section class="social-section" id="comunidad">
+        <div class="section-header">
+            <h2>Únete a nuestra <span>Comunidad</span></h2>
+            <p>Síguenos en nuestras redes sociales y escanea nuestro código QR para acceder rápidamente a ofertas exclusivas.</p>
+        </div>
+
+        <div class="social-grid">
+            <!-- Social Links -->
+            <div class="social-cards">
+                <a href="https://www.facebook.com/share/1G3a5xE1vx/?mibextid=wwXIfr" target="_blank" class="social-card facebook" id="card-fb">
+                    <div class="icon-wrapper"><i class="fa-brands fa-facebook-f"></i></div>
+                    <h3>Facebook</h3>
+                    <p>Últimas noticias y ofertas</p>
+                </a>
+                <a href="https://www.instagram.com/guzman.plaza?igsh=MW9maTNod3UxcjJ0eQ==" target="_blank" class="social-card instagram" id="card-ig">
+                    <div class="icon-wrapper"><i class="fa-brands fa-instagram"></i></div>
+                    <h3>Instagram</h3>
+                    <p>Inspiración y estilo (UG)</p>
+                </a>
+                <a href="https://www.tiktok.com/@plaza.guzman?_r=1&_t=ZS-97fxQ16yV0u" target="_blank" class="social-card tiktok" id="card-tk">
+                    <div class="icon-wrapper"><i class="fa-brands fa-tiktok"></i></div>
+                    <h3>TikTok</h3>
+                    <p>Tendencias y unboxing</p>
+                </a>
+            </div>
+
+            <!-- Store Link Card -->
+            <div class="qr-container">
+                <div class="glass-card qr-card" id="card-qr">
+                    <div class="qr-header" style="margin-bottom: 1rem;">
+                        <h3>Tienda Oficial</h3>
+                        <p>Visita nuestro catálogo en línea y descubre todos nuestros productos.</p>
+                    </div>
+                    <div style="padding: 1.5rem 0;">
+                        <a href="https://plazaguzman.com/" target="_blank" class="btn-primary pulse" style="font-size: 1.2rem; display: block; text-align: center; width: 100%;">
+                            <i class="fa-solid fa-cart-shopping" style="margin-right: 10px;"></i> Ir al Catálogo
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <p>&copy; 2026 Plaza Guzman. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="script.js"></script>
+</body>
+</html>
