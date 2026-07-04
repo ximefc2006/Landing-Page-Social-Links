@@ -251,38 +251,7 @@ p {
     z-index: 2;
 }
 
-.slider-btn {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    background: rgba(255, 255, 255, 0.8);
-    border: none;
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    cursor: pointer;
-    font-size: 1.2rem;
-    color: var(--accent-secondary);
-    z-index: 10;
-    transition: var(--transition-smooth);
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-}
 
-.slider-btn:hover {
-    background: var(--accent-primary);
-    color: white;
-}
-
-.slider-btn.prev {
-    left: 15px;
-}
-
-.slider-btn.next {
-    right: 15px;
-}
 
 .dot {
     width: 10px;

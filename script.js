@@ -83,22 +83,42 @@ document.addEventListener('DOMContentLoaded', () => {
         
         let sliderTimer = setInterval(nextSlide, slideInterval);
         
-        // Navigation buttons
-        const btnNext = document.querySelector('.slider-btn.next');
-        const btnPrev = document.querySelector('.slider-btn.prev');
-        
-        if (btnNext && btnPrev) {
-            btnNext.addEventListener('click', () => {
+        // Navigation by clicking on the image container
+        const sliderContainer = document.getElementById('sliderContainer');
+        if (sliderContainer) {
+            sliderContainer.addEventListener('click', () => {
                 nextSlide();
                 clearInterval(sliderTimer);
                 sliderTimer = setInterval(nextSlide, slideInterval);
             });
             
-            btnPrev.addEventListener('click', () => {
-                prevSlide();
-                clearInterval(sliderTimer);
-                sliderTimer = setInterval(nextSlide, slideInterval);
-            });
+            // Touch Swipe Support
+            let touchStartX = 0;
+            let touchEndX = 0;
+            
+            sliderContainer.addEventListener('touchstart', (e) => {
+                touchStartX = e.changedTouches[0].screenX;
+            }, {passive: true});
+            
+            sliderContainer.addEventListener('touchend', (e) => {
+                touchEndX = e.changedTouches[0].screenX;
+                handleSwipe();
+            }, {passive: true});
+            
+            function handleSwipe() {
+                if (touchEndX < touchStartX - 30) {
+                    // Swiped Left (Next)
+                    nextSlide();
+                    clearInterval(sliderTimer);
+                    sliderTimer = setInterval(nextSlide, slideInterval);
+                }
+                if (touchEndX > touchStartX + 30) {
+                    // Swiped Right (Prev)
+                    prevSlide();
+                    clearInterval(sliderTimer);
+                    sliderTimer = setInterval(nextSlide, slideInterval);
+                }
+            }
         }
         
         // Make dots clickable
