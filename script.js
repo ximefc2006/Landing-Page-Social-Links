@@ -54,4 +54,38 @@ document.addEventListener('DOMContentLoaded', () => {
         qrCard.style.transitionDelay = '0.3s';
         observer.observe(qrCard);
     }
+
+    // 4. Image Slider Logic
+    const slides = document.querySelectorAll('.slide');
+    const dots = document.querySelectorAll('.dot');
+    let currentSlide = 0;
+    const slideInterval = 4000; // 4 seconds per slide
+    
+    if (slides.length > 0) {
+        function goToSlide(index) {
+            slides[currentSlide].classList.remove('active');
+            dots[currentSlide].classList.remove('active');
+            
+            currentSlide = index;
+            
+            slides[currentSlide].classList.add('active');
+            dots[currentSlide].classList.add('active');
+        }
+        
+        function nextSlide() {
+            let nextIndex = (currentSlide + 1) % slides.length;
+            goToSlide(nextIndex);
+        }
+        
+        let sliderTimer = setInterval(nextSlide, slideInterval);
+        
+        // Make dots clickable
+        dots.forEach((dot, index) => {
+            dot.addEventListener('click', () => {
+                goToSlide(index);
+                clearInterval(sliderTimer);
+                sliderTimer = setInterval(nextSlide, slideInterval);
+            });
+        });
+    }
 });
