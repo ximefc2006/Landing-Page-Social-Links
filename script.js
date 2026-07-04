@@ -76,8 +76,30 @@ document.addEventListener('DOMContentLoaded', () => {
             let nextIndex = (currentSlide + 1) % slides.length;
             goToSlide(nextIndex);
         }
+        function prevSlide() {
+            let prevIndex = (currentSlide - 1 + slides.length) % slides.length;
+            goToSlide(prevIndex);
+        }
         
         let sliderTimer = setInterval(nextSlide, slideInterval);
+        
+        // Navigation buttons
+        const btnNext = document.querySelector('.slider-btn.next');
+        const btnPrev = document.querySelector('.slider-btn.prev');
+        
+        if (btnNext && btnPrev) {
+            btnNext.addEventListener('click', () => {
+                nextSlide();
+                clearInterval(sliderTimer);
+                sliderTimer = setInterval(nextSlide, slideInterval);
+            });
+            
+            btnPrev.addEventListener('click', () => {
+                prevSlide();
+                clearInterval(sliderTimer);
+                sliderTimer = setInterval(nextSlide, slideInterval);
+            });
+        }
         
         // Make dots clickable
         dots.forEach((dot, index) => {
