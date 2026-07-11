@@ -307,13 +307,13 @@ document.addEventListener('DOMContentLoaded', () => {
             const isTouchDevice = ('ontouchstart' in window) || (navigator.maxTouchPoints > 0);
 
             const marker = L.marker(s.coords, { icon: redIcon })
-                .addTo(map)
-                .bindPopup(popupHTML, { className: 'custom-popup' });
+                .addTo(map);
             
             s.marker = marker;
             allMarkers.push(marker);
 
             if (!isTouchDevice) {
+                marker.bindPopup(popupHTML, { className: 'custom-popup' });
                 // Desktop: show popup on hover
                 marker.on('mouseover', function () { 
                     this.openPopup(); 
@@ -356,7 +356,9 @@ document.addEventListener('DOMContentLoaded', () => {
                     
                     // Enlarge icon and show info
                     store.marker.setIcon(activeIcon);
-                    store.marker.openPopup();
+                    if (!isTouchDevice) {
+                        store.marker.openPopup();
+                    }
                     infoControl.update(store);
                 });
             });
