@@ -349,10 +349,7 @@ p {
     transform: scale(1.1) rotate(5deg);
 }
 
-.social-card h3 {
-    font-size: 1.25rem;
-    margin-bottom: 0.25rem;
-}
+
 
 .social-card p {
     font-size: 0.9rem;
