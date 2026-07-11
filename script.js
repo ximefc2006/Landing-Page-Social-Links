@@ -136,6 +136,7 @@ document.addEventListener('DOMContentLoaded', () => {
     if (mapContainer) {
         const map = L.map('sucursalesMap', {
             scrollWheelZoom: false,
+            doubleClickZoom: false,
             dragging: true,
             touchZoom: true,
             tap: true
