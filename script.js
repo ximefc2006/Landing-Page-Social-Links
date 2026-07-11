@@ -172,13 +172,20 @@ document.addEventListener('DOMContentLoaded', () => {
             this.update();
             return this._div;
         };
+        let infoTimeout;
         infoControl.update = function (props) {
+            clearTimeout(infoTimeout);
             if (props) {
                 this._div.innerHTML = `
                     <h4>📍 ${props.name}</h4>
                     <p class="store-description-desktop">${props.description}</p>
                 `;
                 this._div.style.display = 'block';
+                
+                // Hide automatically after 3 seconds
+                infoTimeout = setTimeout(() => {
+                    this._div.style.display = 'none';
+                }, 3000);
             } else {
                 this._div.innerHTML = '';
                 this._div.style.display = 'none';
