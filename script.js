@@ -178,13 +178,11 @@ document.addEventListener('DOMContentLoaded', () => {
             if (props) {
                 const mapsUrl = `https://www.google.com/maps/search/?api=1&query=${props.query}`;
                 this._div.innerHTML = `
-                    <div class="info-header">
-                        <h4>📍 ${props.name}</h4>
-                        <a href="${mapsUrl}" target="_blank" class="maps-btn">
-                            <i class="fa-solid fa-map-location-dot"></i> Maps
-                        </a>
-                    </div>
+                    <h4>📍 ${props.name}</h4>
                     <p class="store-description-desktop">${props.description}</p>
+                    <a href="${mapsUrl}" target="_blank" class="maps-btn">
+                        <i class="fa-solid fa-map-location-dot"></i> Abrir en Google Maps
+                    </a>
                 `;
                 this._div.style.display = 'block';
                 
