@@ -176,12 +176,7 @@ document.addEventListener('DOMContentLoaded', () => {
             if (props) {
                 this._div.innerHTML = `
                     <h4>📍 ${props.name}</h4>
-                    <p class="store-address-mobile">${props.address}</p>
                     <p class="store-description-desktop">${props.description}</p>
-                    <div class="store-description-mobile">
-                        <span class="read-more-btn" onclick="this.nextElementSibling.style.display='block'; this.style.display='none';">Leer más...</span>
-                        <p class="store-description-hidden" style="display:none;">${props.description}</p>
-                    </div>
                 `;
                 this._div.style.display = 'block';
             } else {

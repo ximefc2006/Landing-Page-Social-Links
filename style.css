@@ -668,24 +668,7 @@ footer {
     .store-address-mobile { 
         display: none !important; 
     }
-    .store-description-desktop { 
-        display: none; 
-    }
-    .store-description-mobile { 
-        display: block; 
-    }
-    .read-more-btn { 
-        color: var(--accent-primary); 
-        font-size: 0.85rem; 
-        font-weight: 600; 
-        text-decoration: underline; 
-        cursor: pointer;
-    }
-    .store-description-hidden { 
-        margin: 0.5rem 0 0 0; 
-        font-size: 0.85rem; 
-        color: var(--text-muted); 
-    }
+    /* Removed .store-description-mobile and other classes no longer used */
     .leaflet-popup {
         display: none !important; /* Hide popup entirely on mobile */
     }
