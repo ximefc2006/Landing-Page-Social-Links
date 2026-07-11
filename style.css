@@ -498,10 +498,28 @@ p {
     font-size: 1.05rem;
 }
 .store-info-control p {
-    margin: 0;
+    margin: 0 0 0.8rem 0;
     font-size: 0.85rem;
     color: var(--text-muted);
     line-height: 1.4;
+}
+.maps-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    background: var(--accent-primary);
+    color: #fff;
+    font-size: 0.8rem;
+    font-weight: 600;
+    padding: 0.45rem 0.9rem;
+    border-radius: 8px;
+    text-decoration: none;
+    transition: var(--transition-smooth);
+    font-family: var(--font-main);
+}
+.maps-btn:hover {
+    background: #a00d1e;
+    transform: translateY(-1px);
 }
 .store-address-mobile { display: none; }
 .store-description-desktop { display: block; }
