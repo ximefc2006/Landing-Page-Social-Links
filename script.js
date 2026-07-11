@@ -363,10 +363,18 @@ document.addEventListener('DOMContentLoaded', () => {
                     
                     // Enlarge icon and show info
                     store.marker.setIcon(activeIcon);
-                    if (!isTouchDevice) {
+                    
+                    const isTouch = ('ontouchstart' in window) || (navigator.maxTouchPoints > 0);
+                    if (!isTouch) {
                         store.marker.openPopup();
                     }
                     infoControl.update(store);
+                    
+                    // Close the list on mobile
+                    const storeList = document.querySelector('.store-list-items');
+                    if (storeList) {
+                        storeList.classList.remove('show');
+                    }
                 });
             });
         }, 100);
