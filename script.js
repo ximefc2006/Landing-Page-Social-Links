@@ -237,25 +237,11 @@ document.addEventListener('DOMContentLoaded', () => {
                 description: 'Las últimas novedades en calcetería y ropa interior.'
             },
             {
-                name: 'Bonetería Richi 1',
-                address: 'Del Correo Mayor, Col. Centro VII, CDMX, C.P. 06060',
-                coords: [19.42645, -99.13089],
-                query: 'Correo+Mayor+Colonia+Centro+VII+Ciudad+de+Mexico+06060',
-                description: 'Especialistas en bonetería para todas las edades.'
-            },
-            {
-                name: 'Bonetería Richi 2',
+                name: 'Bonetería Richi 1, 2 y 3',
                 address: 'Del Correo Mayor 127, Col. Centro VII, CDMX, C.P. 06060',
                 coords: [19.42653, -99.13081],
                 query: 'Correo+Mayor+127+Colonia+Centro+VII+Ciudad+de+Mexico+06060',
-                description: 'La mejor atención y extenso surtido en ropa interior.'
-            },
-            {
-                name: 'Bonetería Richi 3',
-                address: 'Del Correo Mayor 127-B, Col. Centro VII, CDMX, C.P. 06060',
-                coords: [19.42653, -99.13086],
-                query: 'Correo+Mayor+127+B+Colonia+Centro+VII+Ciudad+de+Mexico+06060',
-                description: 'Surtido completo de calcetería y productos de bonetería.'
+                description: 'Especialistas en bonetería, con extenso surtido y la mejor atención en ropa interior.'
             },
             {
                 name: 'Zapata',
