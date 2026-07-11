@@ -241,9 +241,18 @@ document.addEventListener('DOMContentLoaded', () => {
                     </a>
                 </div>
             `;
-            L.marker(s.coords, { icon: redIcon })
+            const isTouchDevice = ('ontouchstart' in window) || (navigator.maxTouchPoints > 0);
+
+            const marker = L.marker(s.coords, { icon: redIcon })
                 .addTo(map)
                 .bindPopup(popupHTML, { className: 'custom-popup' });
+
+            if (!isTouchDevice) {
+                // Desktop: show popup on hover
+                marker.on('mouseover', function () { this.openPopup(); });
+                marker.on('mouseout', function () { this.closePopup(); });
+            }
+            // Mobile: default tap behavior works automatically
         });
     }
 });
