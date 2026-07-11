@@ -187,7 +187,7 @@ document.addEventListener('DOMContentLoaded', () => {
             {
                 name: 'MG',
                 address: 'Cll. Correo Mayor 22-1, Moneda y Soledad, Centro, CDMX, C.P. 06060',
-                coords: [19.43150, -99.13100],
+                coords: [19.43280, -99.12991],
                 query: 'Correo+Mayor+22+Moneda+y+Soledad+Centro+Ciudad+de+Mexico+06060'
             },
             {
