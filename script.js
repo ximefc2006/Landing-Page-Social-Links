@@ -215,7 +215,7 @@ document.addEventListener('DOMContentLoaded', () => {
             {
                 name: 'Bonetería Richi 2',
                 address: 'Del Correo Mayor 127, Col. Centro VII, CDMX, C.P. 06060',
-                coords: [19.42653, -99.13086],
+                coords: [19.42653, -99.13081],
                 query: 'Correo+Mayor+127+Colonia+Centro+VII+Ciudad+de+Mexico+06060'
             },
             {
