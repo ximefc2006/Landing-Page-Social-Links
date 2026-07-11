@@ -526,7 +526,7 @@ p {
 
 @media (max-width: 768px) {
     .leaflet-pan-control {
-        display: none;
+        display: none !important;
     }
 }
 
