@@ -138,9 +138,9 @@ document.addEventListener('DOMContentLoaded', () => {
             scrollWheelZoom: false
         }).setView([19.4280, -99.1300], 16);
 
-        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-            attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>',
-            maxZoom: 19,
+        L.tileLayer('https://mt1.google.com/vt/lyrs=m&x={x}&y={y}&z={z}', {
+            attribution: '&copy; Google Maps',
+            maxZoom: 20,
         }).addTo(map);
 
         // Custom directional pan control (arrows)
