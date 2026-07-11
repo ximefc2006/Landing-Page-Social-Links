@@ -156,6 +156,15 @@ document.addEventListener('DOMContentLoaded', () => {
             popupAnchor: [0, -42]
         });
 
+        // Active/Bigger icon
+        const activeIcon = L.divIcon({
+            className: 'custom-marker active',
+            html: '<i class="fa-solid fa-location-dot" style="font-size:3.5rem;color:#CE1126;filter:drop-shadow(0 5px 12px rgba(206,17,38,0.8));"></i>',
+            iconSize: [40, 50],
+            iconAnchor: [20, 50],
+            popupAnchor: [0, -52]
+        });
+
         // Info Control
         const infoControl = L.control({ position: 'bottomright' });
         infoControl.onAdd = function () {
@@ -176,6 +185,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
         map.on('click', function() {
             infoControl.update(); // Hide info on map click
+            if (window.allMarkersRef) {
+                window.allMarkersRef.forEach(m => m.setIcon(redIcon));
+            }
         });
 
         // All 12 branches
@@ -253,7 +265,25 @@ document.addEventListener('DOMContentLoaded', () => {
         ];
 
         const allMarkers = [];
-        sucursales.forEach(s => {
+        window.allMarkersRef = allMarkers;
+
+        // List Control
+        const listControl = L.control({ position: 'topleft' });
+        listControl.onAdd = function () {
+            this._div = L.DomUtil.create('div', 'store-list-control');
+            let html = '<h4>Nuestras Sucursales</h4><ul>';
+            sucursales.forEach((s, index) => {
+                html += `<li data-index="${index}">${s.name}</li>`;
+            });
+            html += '</ul>';
+            this._div.innerHTML = html;
+            L.DomEvent.disableClickPropagation(this._div);
+            L.DomEvent.disableScrollPropagation(this._div);
+            return this._div;
+        };
+        listControl.addTo(map);
+
+        sucursales.forEach((s, index) => {
             const popupHTML = `
                 <div class="popup-content">
                     <h3>📍 ${s.name}</h3>
@@ -265,7 +295,8 @@ document.addEventListener('DOMContentLoaded', () => {
             const marker = L.marker(s.coords, { icon: redIcon })
                 .addTo(map)
                 .bindPopup(popupHTML, { className: 'custom-popup' });
-
+            
+            s.marker = marker;
             allMarkers.push(marker);
 
             if (!isTouchDevice) {
@@ -275,11 +306,15 @@ document.addEventListener('DOMContentLoaded', () => {
                     infoControl.update(s);
                 });
                 marker.on('mouseout', function () { 
+                    if (this.options.icon === activeIcon) return; // Keep open if it's the active one from list
                     this.closePopup(); 
                     infoControl.update();
                 });
             } else {
+                // Mobile
                 marker.on('click', function () {
+                    allMarkers.forEach(m => m.setIcon(redIcon));
+                    this.setIcon(activeIcon);
                     infoControl.update(s);
                 });
             }
@@ -290,6 +325,28 @@ document.addEventListener('DOMContentLoaded', () => {
                 window.open('https://www.google.com/maps/search/?api=1&query=' + s.query, '_blank');
             });
         });
+
+        // List item click events
+        setTimeout(() => {
+            const listItems = document.querySelectorAll('.store-list-control li');
+            listItems.forEach(item => {
+                item.addEventListener('click', function() {
+                    // Reset all markers
+                    allMarkers.forEach(m => m.setIcon(redIcon));
+                    
+                    const idx = this.getAttribute('data-index');
+                    const store = sucursales[idx];
+                    
+                    // Fly to location
+                    map.flyTo(store.coords, 18, { duration: 1.5 });
+                    
+                    // Enlarge icon and show info
+                    store.marker.setIcon(activeIcon);
+                    store.marker.openPopup();
+                    infoControl.update(store);
+                });
+            });
+        }, 100);
 
         // Fit map to show all markers
         if (allMarkers.length > 0) {

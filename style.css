@@ -509,6 +509,56 @@ p {
     line-height: 1.4;
 }
 
+/* Store List Control */
+.store-list-control {
+    background: var(--bg-card);
+    padding: 1rem;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.12);
+    border: 1px solid rgba(46, 48, 51, 0.08);
+    max-width: 220px;
+    font-family: var(--font-main);
+    z-index: 1000;
+    max-height: 350px;
+    overflow-y: auto;
+}
+.store-list-control h4 {
+    margin: 0 0 0.8rem 0;
+    color: var(--accent-primary);
+    font-size: 1rem;
+    text-align: center;
+    border-bottom: 2px solid rgba(46,48,51,0.05);
+    padding-bottom: 0.5rem;
+}
+.store-list-control ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+.store-list-control li {
+    padding: 0.6rem 0.5rem;
+    font-size: 0.85rem;
+    color: var(--text-main);
+    cursor: pointer;
+    border-radius: 6px;
+    transition: var(--transition-smooth);
+    margin-bottom: 2px;
+    border: 1px solid transparent;
+}
+.store-list-control li:hover {
+    background: rgba(206, 17, 38, 0.05);
+    color: var(--accent-primary);
+    font-weight: 600;
+    border-color: rgba(206, 17, 38, 0.1);
+}
+.store-list-control::-webkit-scrollbar {
+    width: 6px;
+}
+.store-list-control::-webkit-scrollbar-thumb {
+    background: #ccc;
+    border-radius: 4px;
+}
+
 /* ==========================================================================
    Footer
    ========================================================================== */
