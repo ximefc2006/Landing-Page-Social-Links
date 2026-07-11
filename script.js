@@ -185,56 +185,56 @@ document.addEventListener('DOMContentLoaded', () => {
                 address: 'And. Jesús María 136-1, Centro (Área 1), CDMX, C.P. 06020',
                 coords: [19.42905, -99.12635],
                 query: 'Andador+Jesus+Maria+136+Centro+Ciudad+de+Mexico+06020',
-                description: 'Encuentra las mejores marcas en bonetería y artículos de temporada.'
+                description: 'Productos de temporada, follajes y decoración artificial; biombos y separadores decorativos; decoración para hogar, para fiestas y eventos; artículos navideños, de decoración y exhibición, de hallowen, llaveros y artículos de regalo'
             },
             {
                 name: 'Tabaqueros',
                 address: 'Cll. Tabaqueros 7, Local, Centro, CDMX, C.P. 06020',
                 coords: [19.42985, -99.12800],
                 query: 'Calle+Tabaqueros+7+Centro+Ciudad+de+Mexico+06020',
-                description: 'Gran variedad de ropa interior y calcetería para toda la familia.'
+                description: 'Productos de temporada, follajes y decoración artificial; biombos y separadores decorativos; decoración para hogar, para fiestas y eventos; artículos navideños, de decoración y exhibición, de hallowen, llaveros y artículos de regalo'
             },
             {
                 name: 'Julia y Julia B',
                 address: 'Cll. de Venustiano Carranza 117, Centro, CDMX, C.P. 06000',
                 coords: [19.42750, -99.13200],
                 query: 'Venustiano+Carranza+117+Centro+Ciudad+de+Mexico+06000',
-                description: 'Venta por mayoreo y menudeo de productos textiles de excelente calidad.'
+                description: 'Productos de temporada, follajes y decoración artificial; biombos y separadores decorativos; decoración para hogar, para fiestas y eventos; artículos navideños, de decoración y exhibición, de hallowen, llaveros y artículos de regalo'
             },
             {
                 name: 'Manzanares',
                 address: 'Cjn. Manzanares 22, Centro, CDMX, C.P. 06020',
                 coords: [19.42670, -99.12600],
                 query: 'Callejon+Manzanares+22+Centro+Ciudad+de+Mexico+06020',
-                description: 'Todo lo que necesitas en bonetería y artículos varios a los mejores precios.'
+                description: 'Productos de temporada, follajes y decoración artificial; biombos y separadores decorativos; decoración para hogar, para fiestas y eventos; artículos navideños, de decoración y exhibición, de hallowen, llaveros y artículos de regalo'
             },
             {
                 name: 'Hector',
                 address: 'Cll. del Correo Mayor 91, Centro, CDMX, C.P. 06020',
                 coords: [19.42950, -99.13050],
                 query: 'Correo+Mayor+91+Centro+Ciudad+de+Mexico+06020',
-                description: 'Especialistas en ropa interior, calcetería y novedades.'
+                description: 'Productos de temporada, follajes y decoración artificial; biombos y separadores decorativos; decoración para hogar, para fiestas y eventos; artículos navideños, de decoración y exhibición, de hallowen, llaveros y artículos de regalo'
             },
             {
                 name: 'MG',
                 address: 'Cll. Correo Mayor 22-1, Moneda y Soledad, Centro, CDMX, C.P. 06060',
                 coords: [19.43280, -99.12991],
                 query: 'Correo+Mayor+22+Moneda+y+Soledad+Centro+Ciudad+de+Mexico+06060',
-                description: 'Amplio surtido en prendas de algodón y artículos para el hogar.'
+                description: 'Productos de temporada, follajes y decoración artificial; biombos y separadores decorativos; decoración para hogar, para fiestas y eventos; artículos navideños, de decoración y exhibición, de hallowen, llaveros y artículos de regalo'
             },
             {
                 name: 'Regina',
                 address: 'Cll. Regina 88, Pino Suárez y 20 de Nov., Centro, CDMX, C.P. 06020',
                 coords: [19.42550, -99.13400],
                 query: 'Calle+Regina+88+Centro+Ciudad+de+Mexico+06020',
-                description: 'Calidad y precio en todo nuestro catálogo de bonetería.'
+                description: 'Productos de temporada, follajes y decoración artificial; biombos y separadores decorativos; decoración para hogar, para fiestas y eventos; artículos navideños, de decoración y exhibición, de hallowen, llaveros y artículos de regalo'
             },
             {
                 name: 'Novedades Claudia',
                 address: 'Del Correo Mayor 149, Col. Centro VII, CDMX, C.P. 06060',
                 coords: [19.42700, -99.12950],
                 query: 'Correo+Mayor+149+Colonia+Centro+Ciudad+de+Mexico+06060',
-                description: 'Las últimas novedades en calcetería y ropa interior.'
+                description: 'Productos de temporada, follajes y decoración artificial; biombos y separadores decorativos; decoración para hogar, para fiestas y eventos; artículos navideños, de decoración y exhibición, de hallowen, llaveros y artículos de regalo'
             },
             {
                 name: 'Bonetería Richi 1, 2 y 3',
@@ -248,7 +248,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 address: 'C. Emiliano Zapata 57 Int. B, Col. Centro, Cuauhtémoc, CDMX, C.P. 06000',
                 coords: [19.42480, -99.13700],
                 query: 'Emiliano+Zapata+57+Colonia+Centro+Cuauhtemoc+CDMX+06000',
-                description: 'Mayoreo y menudeo de artículos de bonetería con excelente ubicación.'
+                description: 'Productos de temporada, follajes y decoración artificial; biombos y separadores decorativos; decoración para hogar, para fiestas y eventos; artículos navideños, de decoración y exhibición, de hallowen, llaveros y artículos de regalo'
             }
         ];
 
