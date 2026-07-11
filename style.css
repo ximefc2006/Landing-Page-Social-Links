@@ -669,7 +669,7 @@ footer {
         display: none !important; 
     }
     .store-description-desktop {
-        display: none !important; /* Hide description completely on mobile */
+        display: block !important; 
     }
     /* Removed .store-description-mobile and other classes no longer used */
     .leaflet-popup {
