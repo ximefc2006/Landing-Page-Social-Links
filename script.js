@@ -174,7 +174,15 @@ document.addEventListener('DOMContentLoaded', () => {
         };
         infoControl.update = function (props) {
             if (props) {
-                this._div.innerHTML = `<h4>📍 ${props.name}</h4><p>${props.description}</p>`;
+                this._div.innerHTML = `
+                    <h4>📍 ${props.name}</h4>
+                    <p class="store-address-mobile">${props.address}</p>
+                    <p class="store-description-desktop">${props.description}</p>
+                    <div class="store-description-mobile">
+                        <span class="read-more-btn" onclick="this.nextElementSibling.style.display='block'; this.style.display='none';">Leer más...</span>
+                        <p class="store-description-hidden" style="display:none;">${props.description}</p>
+                    </div>
+                `;
                 this._div.style.display = 'block';
             } else {
                 this._div.innerHTML = '';
@@ -271,7 +279,13 @@ document.addEventListener('DOMContentLoaded', () => {
         const listControl = L.control({ position: 'topleft' });
         listControl.onAdd = function () {
             this._div = L.DomUtil.create('div', 'store-list-control');
-            let html = '<h4>Nuestras Sucursales</h4><ul>';
+            let html = `
+                <div class="store-list-header">
+                    <h4>Nuestras Sucursales</h4>
+                    <button class="hamburger-btn" onclick="this.parentElement.nextElementSibling.classList.toggle('show')"><i class="fa-solid fa-bars"></i></button>
+                </div>
+                <ul class="store-list-items">
+            `;
             sucursales.forEach((s, index) => {
                 html += `<li data-index="${index}">${s.name}</li>`;
             });
