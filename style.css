@@ -668,6 +668,9 @@ footer {
     .store-address-mobile { 
         display: none !important; 
     }
+    .store-description-desktop {
+        display: none !important; /* Hide description completely on mobile */
+    }
     /* Removed .store-description-mobile and other classes no longer used */
     .leaflet-popup {
         display: none !important; /* Hide popup entirely on mobile */
