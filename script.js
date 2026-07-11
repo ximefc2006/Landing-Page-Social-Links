@@ -252,7 +252,12 @@ document.addEventListener('DOMContentLoaded', () => {
                 marker.on('mouseover', function () { this.openPopup(); });
                 marker.on('mouseout', function () { this.closePopup(); });
             }
-            // Mobile: default tap behavior works automatically
+
+            // Double click: open Google Maps directly
+            marker.on('dblclick', function (e) {
+                L.DomEvent.stopPropagation(e);
+                window.open('https://www.google.com/maps/search/?api=1&query=' + s.query, '_blank');
+            });
         });
     }
 });
