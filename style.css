@@ -486,6 +486,29 @@ p {
     }
 }
 
+/* Store Info Control */
+.store-info-control {
+    background: var(--bg-card);
+    padding: 1.2rem;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.12);
+    border: 1px solid rgba(46, 48, 51, 0.08);
+    max-width: 250px;
+    font-family: var(--font-main);
+    z-index: 1000;
+}
+.store-info-control h4 {
+    margin: 0 0 0.5rem 0;
+    color: var(--accent-primary);
+    font-size: 1.05rem;
+}
+.store-info-control p {
+    margin: 0;
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    line-height: 1.4;
+}
+
 /* ==========================================================================
    Footer
    ========================================================================== */
