@@ -524,6 +524,12 @@ p {
 .pan-right { grid-column: 3; grid-row: 2; }
 .pan-down  { grid-column: 2; grid-row: 3; }
 
+@media (max-width: 768px) {
+    .leaflet-pan-control {
+        display: none;
+    }
+}
+
 /* ==========================================================================
    Footer
    ========================================================================== */
