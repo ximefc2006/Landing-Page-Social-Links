@@ -320,15 +320,12 @@ document.addEventListener('DOMContentLoaded', () => {
 
             if (!isTouchDevice) {
                 marker.bindPopup(popupHTML, { className: 'custom-popup' });
-                // Desktop: show popup on hover
-                marker.on('mouseover', function () { 
-                    this.openPopup(); 
+                // Desktop: show info on click
+                marker.on('click', function () {
+                    allMarkers.forEach(m => m.setIcon(redIcon));
+                    this.setIcon(activeIcon);
+                    this.openPopup();
                     infoControl.update(s);
-                });
-                marker.on('mouseout', function () { 
-                    if (this.options.icon === activeIcon) return; // Keep open if it's the active one from list
-                    this.closePopup(); 
-                    infoControl.update();
                 });
             } else {
                 // Mobile
