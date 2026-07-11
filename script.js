@@ -330,6 +330,13 @@ document.addEventListener('DOMContentLoaded', () => {
                     allMarkers.forEach(m => m.setIcon(redIcon));
                     this.setIcon(activeIcon);
                     infoControl.update(s);
+                    
+                    // Simulated double tap
+                    const now = Date.now();
+                    if (this._lastClick && (now - this._lastClick) < 400) {
+                        window.open('https://www.google.com/maps/search/?api=1&query=' + s.query, '_blank');
+                    }
+                    this._lastClick = now;
                 });
             }
 

@@ -651,6 +651,12 @@ footer {
     .nav-links {
         display: none; /* In a full app, implement a hamburger menu */
     }
+    /* Leaflet Controls Layout */
+    .leaflet-top.leaflet-left {
+        display: flex;
+        flex-direction: row;
+        align-items: flex-start;
+    }
     
     /* Store Info Control Mobile */
     .store-info-control {
@@ -660,10 +666,7 @@ footer {
         margin-bottom: 25px !important;
     }
     .store-address-mobile { 
-        display: block; 
-        font-size: 0.8rem; 
-        color: var(--text-main); 
-        margin-bottom: 0.5rem; 
+        display: none !important; 
     }
     .store-description-desktop { 
         display: none; 
