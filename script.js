@@ -232,6 +232,7 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         ];
 
+        const allMarkers = [];
         sucursales.forEach(s => {
             const popupHTML = `
                 <div class="popup-content">
@@ -248,6 +249,8 @@ document.addEventListener('DOMContentLoaded', () => {
                 .addTo(map)
                 .bindPopup(popupHTML, { className: 'custom-popup' });
 
+            allMarkers.push(marker);
+
             if (!isTouchDevice) {
                 // Desktop: show popup on hover
                 marker.on('mouseover', function () { this.openPopup(); });
@@ -260,5 +263,11 @@ document.addEventListener('DOMContentLoaded', () => {
                 window.open('https://www.google.com/maps/search/?api=1&query=' + s.query, '_blank');
             });
         });
+
+        // Fit map to show all markers
+        if (allMarkers.length > 0) {
+            const group = L.featureGroup(allMarkers);
+            map.fitBounds(group.getBounds().pad(0.1));
+        }
     }
 });
