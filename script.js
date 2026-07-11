@@ -135,42 +135,16 @@ document.addEventListener('DOMContentLoaded', () => {
     const mapContainer = document.getElementById('sucursalesMap');
     if (mapContainer) {
         const map = L.map('sucursalesMap', {
-            scrollWheelZoom: false
+            scrollWheelZoom: false,
+            dragging: true,
+            touchZoom: true,
+            tap: true
         }).setView([19.4280, -99.1300], 16);
 
         L.tileLayer('https://mt1.google.com/vt/lyrs=m&x={x}&y={y}&z={z}', {
             attribution: '&copy; Google Maps',
             maxZoom: 20,
         }).addTo(map);
-
-        // Custom directional pan control (arrows)
-        const PanControl = L.Control.extend({
-            options: { position: 'topleft' },
-            onAdd: function () {
-                const container = L.DomUtil.create('div', 'leaflet-pan-control');
-                const panAmount = 100; // pixels to pan
-
-                const buttons = [
-                    { icon: 'fa-arrow-up',    dx: 0,          dy: -panAmount, cls: 'pan-up' },
-                    { icon: 'fa-arrow-left',  dx: -panAmount,  dy: 0,          cls: 'pan-left' },
-                    { icon: 'fa-arrow-right', dx: panAmount,   dy: 0,          cls: 'pan-right' },
-                    { icon: 'fa-arrow-down',  dx: 0,          dy: panAmount,   cls: 'pan-down' },
-                ];
-
-                buttons.forEach(b => {
-                    const btn = L.DomUtil.create('button', 'pan-btn ' + b.cls, container);
-                    btn.innerHTML = '<i class="fa-solid ' + b.icon + '"></i>';
-                    btn.title = b.icon.replace('fa-arrow-', '').charAt(0).toUpperCase() + b.icon.replace('fa-arrow-', '').slice(1);
-                    L.DomEvent.disableClickPropagation(btn);
-                    L.DomEvent.on(btn, 'click', function () {
-                        map.panBy([b.dx, b.dy]);
-                    });
-                });
-
-                return container;
-            }
-        });
-        map.addControl(new PanControl());
 
         // Custom red icon
         const redIcon = L.divIcon({
