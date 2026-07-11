@@ -130,4 +130,117 @@ document.addEventListener('DOMContentLoaded', () => {
             });
         });
     }
+
+    // 5. Interactive Map - Sucursales
+    const mapContainer = document.getElementById('sucursalesMap');
+    if (mapContainer) {
+        const map = L.map('sucursalesMap', {
+            scrollWheelZoom: false
+        }).setView([19.4280, -99.1300], 16);
+
+        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>',
+            maxZoom: 19,
+        }).addTo(map);
+
+        // Custom red icon
+        const redIcon = L.divIcon({
+            className: 'custom-marker',
+            html: '<i class="fa-solid fa-location-dot" style="font-size:2.2rem;color:#CE1126;filter:drop-shadow(0 3px 6px rgba(206,17,38,0.5));"></i>',
+            iconSize: [30, 40],
+            iconAnchor: [15, 40],
+            popupAnchor: [0, -42]
+        });
+
+        // All 12 branches
+        const sucursales = [
+            {
+                name: 'Jesús María',
+                address: 'And. Jesús María 136-1, Centro (Área 1), CDMX, C.P. 06020',
+                coords: [19.42905, -99.12635],
+                query: 'Andador+Jesus+Maria+136+Centro+Ciudad+de+Mexico+06020'
+            },
+            {
+                name: 'Tabaqueros',
+                address: 'Cll. Tabaqueros 7, Local, Centro, CDMX, C.P. 06020',
+                coords: [19.42985, -99.12800],
+                query: 'Calle+Tabaqueros+7+Centro+Ciudad+de+Mexico+06020'
+            },
+            {
+                name: 'Julia y Julia B',
+                address: 'Cll. de Venustiano Carranza 117, Centro, CDMX, C.P. 06000',
+                coords: [19.42750, -99.13200],
+                query: 'Venustiano+Carranza+117+Centro+Ciudad+de+Mexico+06000'
+            },
+            {
+                name: 'Manzanares',
+                address: 'Cjn. Manzanares 22, Centro, CDMX, C.P. 06020',
+                coords: [19.42670, -99.12600],
+                query: 'Callejon+Manzanares+22+Centro+Ciudad+de+Mexico+06020'
+            },
+            {
+                name: 'Hector',
+                address: 'Cll. del Correo Mayor 91, Centro, CDMX, C.P. 06020',
+                coords: [19.42950, -99.13050],
+                query: 'Correo+Mayor+91+Centro+Ciudad+de+Mexico+06020'
+            },
+            {
+                name: 'MG',
+                address: 'Cll. Correo Mayor 22-1, Moneda y Soledad, Centro, CDMX, C.P. 06060',
+                coords: [19.43150, -99.13100],
+                query: 'Correo+Mayor+22+Moneda+y+Soledad+Centro+Ciudad+de+Mexico+06060'
+            },
+            {
+                name: 'Regina',
+                address: 'Cll. Regina 88, Pino Suárez y 20 de Nov., Centro, CDMX, C.P. 06020',
+                coords: [19.42550, -99.13400],
+                query: 'Calle+Regina+88+Centro+Ciudad+de+Mexico+06020'
+            },
+            {
+                name: 'Novedades Claudia',
+                address: 'Del Correo Mayor 149, Col. Centro VII, CDMX, C.P. 06060',
+                coords: [19.42700, -99.12950],
+                query: 'Correo+Mayor+149+Colonia+Centro+Ciudad+de+Mexico+06060'
+            },
+            {
+                name: 'Bonetería Richi 1',
+                address: 'Del Correo Mayor, Col. Centro VII, CDMX, C.P. 06060',
+                coords: [19.42800, -99.12980],
+                query: 'Correo+Mayor+Colonia+Centro+VII+Ciudad+de+Mexico+06060'
+            },
+            {
+                name: 'Bonetería Richi 2',
+                address: 'Del Correo Mayor 127, Col. Centro VII, CDMX, C.P. 06060',
+                coords: [19.42760, -99.12970],
+                query: 'Correo+Mayor+127+Colonia+Centro+VII+Ciudad+de+Mexico+06060'
+            },
+            {
+                name: 'Bonetería Richi 3',
+                address: 'Del Correo Mayor 127-B, Col. Centro VII, CDMX, C.P. 06060',
+                coords: [19.42740, -99.12960],
+                query: 'Correo+Mayor+127+B+Colonia+Centro+VII+Ciudad+de+Mexico+06060'
+            },
+            {
+                name: 'Zapata',
+                address: 'C. Emiliano Zapata 57 Int. B, Col. Centro, Cuauhtémoc, CDMX, C.P. 06000',
+                coords: [19.42480, -99.13700],
+                query: 'Emiliano+Zapata+57+Colonia+Centro+Cuauhtemoc+CDMX+06000'
+            }
+        ];
+
+        sucursales.forEach(s => {
+            const popupHTML = `
+                <div class="popup-content">
+                    <h3>📍 ${s.name}</h3>
+                    <p>${s.address}</p>
+                    <a href="https://www.google.com/maps/search/?api=1&query=${s.query}" target="_blank">
+                        Ver en Google Maps <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                    </a>
+                </div>
+            `;
+            L.marker(s.coords, { icon: redIcon })
+                .addTo(map)
+                .bindPopup(popupHTML, { className: 'custom-popup' });
+        });
+    }
 });

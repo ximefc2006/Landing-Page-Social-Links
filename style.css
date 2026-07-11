@@ -414,107 +414,76 @@ p {
     background-color: var(--bg-dark);
 }
 
-.locations-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 2rem;
+.map-wrapper {
     max-width: 1200px;
     margin: 0 auto;
-}
-
-.location-card {
-    display: flex;
-    flex-direction: column;
-    padding: 0;
-    overflow: hidden;
-    cursor: pointer;
-}
-
-.location-card:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.08);
-}
-
-.location-map {
-    height: 160px;
-    background: #e9ecef;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    position: relative;
+    padding: 0.5rem;
     overflow: hidden;
 }
 
-/* Subtle map pattern background */
-.location-map::before {
-    content: '';
-    position: absolute;
-    top: 0; left: 0; right: 0; bottom: 0;
-    background-image: radial-gradient(rgba(46, 48, 51, 0.15) 1px, transparent 1px);
-    background-size: 20px 20px;
-    opacity: 0.8;
-}
-
-.location-pin {
-    font-size: 3.5rem;
-    color: var(--accent-primary);
+#sucursalesMap {
+    width: 100%;
+    height: 550px;
+    border-radius: 20px;
     z-index: 1;
-    transition: var(--transition-smooth);
-    filter: drop-shadow(0 5px 10px rgba(206, 17, 38, 0.3));
 }
 
-.location-card:hover .location-pin {
-    transform: scale(1.2) translateY(-5px);
-    animation: float 2s ease-in-out infinite;
+/* Custom Leaflet Popup Styles */
+.custom-popup .leaflet-popup-content-wrapper {
+    background: var(--bg-card);
+    border-radius: 16px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.12);
+    border: 1px solid rgba(46, 48, 51, 0.08);
+    padding: 0;
 }
 
-.location-info {
-    padding: 1.5rem;
-    text-align: center;
+.custom-popup .leaflet-popup-content {
+    margin: 0;
+    font-family: var(--font-main);
+    min-width: 220px;
+}
+
+.custom-popup .leaflet-popup-tip {
     background: var(--bg-card);
 }
 
-.location-info h3 {
-    font-size: 1.25rem;
-    margin-bottom: 0.5rem;
+.popup-content {
+    padding: 1.2rem;
+}
+
+.popup-content h3 {
+    font-size: 1.1rem;
+    font-weight: 700;
     color: var(--text-main);
+    margin-bottom: 0.4rem;
 }
 
-.location-address {
-    font-size: 0.95rem;
+.popup-content p {
+    font-size: 0.85rem;
     color: var(--text-muted);
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    margin-bottom: 0.8rem;
+    line-height: 1.4;
 }
 
-.location-cta {
+.popup-content a {
     display: inline-flex;
     align-items: center;
     gap: 6px;
-    margin-top: 0.75rem;
-    font-size: 0.85rem;
+    font-size: 0.8rem;
     font-weight: 600;
     color: var(--accent-primary);
-    opacity: 0;
-    transform: translateY(5px);
+    text-decoration: none;
     transition: var(--transition-smooth);
 }
 
-.location-cta i {
-    font-size: 0.75rem;
+.popup-content a:hover {
+    opacity: 0.8;
 }
 
-.location-card:hover .location-cta {
-    opacity: 1;
-    transform: translateY(0);
-}
-
-a.location-card {
-    text-decoration: none;
-    color: inherit;
-    display: flex;
-    flex-direction: column;
+@media (max-width: 768px) {
+    #sucursalesMap {
+        height: 400px;
+    }
 }
 
 /* ==========================================================================
